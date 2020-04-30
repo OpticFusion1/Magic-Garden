@@ -1,3 +1,14 @@
+/**
+ * Game: Magic Garden
+ * Producer: Vast-Horizon
+ * completion date: April_30th_2020
+ * 
+ * A simple java text-based adventure game, should take
+ * Estimated pass time is 2 minutes
+ * 
+ * Github link: https://github.com/Vast-Horizon/Magic-Garden              :)
+ * **/
+
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -5,20 +16,20 @@ public class Game {
 	
 	
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) 
+	{
 	
 		String mess_1 = "Your goal is to get out of here and keep alive";
 		String mess_2 = "There are both happy&sad ending of this game, enjoy!";
-		String mess = mess_1 +"\r\n"+ mess_2;
+		
 		
 		JOptionPane.showMessageDialog(null, "----------Magic Garden---------","Welcome, adventurer",JOptionPane.INFORMATION_MESSAGE);
 		JOptionPane.showMessageDialog(null, "You come to an unknown garden","Welcome, adventurer",JOptionPane.INFORMATION_MESSAGE);
 		JOptionPane.showMessageDialog(null, "You remember you came from the WEST, but the road to the west disappeared","Welcome, adventurer",JOptionPane.INFORMATION_MESSAGE);
-		JOptionPane.showMessageDialog(null, mess,"Welcome, adventurer",JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, mess_1 +"\r\n"+ mess_2,"Welcome, adventurer",JOptionPane.INFORMATION_MESSAGE);
 	
 
-		Game.theGame();
+		Game.theGame(); //Start the first stage of the game
 		
 
 	}
@@ -26,40 +37,42 @@ public class Game {
 	
 	
 	
-	public static void theGame() 
+	public static void theGame() // first game stage method. 
+	//Note: the whole gaming process should follows the order of Introduction--> theGame-->theGame3-->theGame2-->theGame4-->Ending
 	{
-		Object[] options = {"North", "South", "East"};
+		
+		Object[] options = {"North", "South", "East"}; //create the options array, these texts will show up on the dialog buttons
 		int choiceF = JOptionPane.showOptionDialog(null,"Which way would you like to go now? ", "Make a Decision",
-						JOptionPane.YES_NO_CANCEL_OPTION,
-						JOptionPane.QUESTION_MESSAGE,
-						null,options,options[2]);
+						JOptionPane.YES_NO_CANCEL_OPTION, //option type: yes_no_cancel
+						JOptionPane.QUESTION_MESSAGE,     //dialog type is Question
+						null,options,options[2]); //null indicates no frame has been pointed.    options[2]: the 0, 1st, 2ed elements in the array options.
+		
 
 
 		
-		Scanner sc = new Scanner(System.in);
 
 		
-		if (choiceF == 0) 
+		if (choiceF == 0) //Use "if-else if" to deal with different choices
 		{
-			JOptionPane.showMessageDialog(null, "---You encounter a monsiter---",  "Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "---You encounter a monster---",  "Warning", JOptionPane.WARNING_MESSAGE); //dialog type is Warning
 			
 			Object[] option_2 = {"Run away", "Try to kill it"};
 			int choiceS = JOptionPane.showOptionDialog(null,"What would you do", "Make a Decision",
 					JOptionPane.YES_NO_CANCEL_OPTION,
 					JOptionPane.QUESTION_MESSAGE,
-					null,option_2,option_2[1]);
+					null,option_2,option_2[1]); //options[1]: the 0, 1st, elements in the array options.
 
 
 
 			if (choiceS == 0) 
 			{
-				JOptionPane.showMessageDialog(null, "You run back to the beginning point","Fortunately",JOptionPane.INFORMATION_MESSAGE);
-				theGame();
+				JOptionPane.showMessageDialog(null, "You run back to the beginning point","Fortunately",JOptionPane.INFORMATION_MESSAGE);//dialog type is Information
+				theGame();//restart the first game stage method
 			}
 			else if (choiceS == 1) 
 			{
 				JOptionPane.showMessageDialog(null, "OMG, you get killed",  "Warning", JOptionPane.WARNING_MESSAGE);
-				JOptionPane.showMessageDialog(null, "Game over",  "Warning", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Game over",  "Lose", JOptionPane.WARNING_MESSAGE); // Game over
 			}
 
 		}
@@ -112,10 +125,6 @@ public class Game {
 					JOptionPane.QUESTION_MESSAGE,
 					null,option_4,option_4[2]);
 
-			
-
-
-			
 		
 			
 			if ((choiceFo == 0)) 
@@ -150,13 +159,13 @@ public class Game {
 			
 		}
 
+				
 			
 			
-			
-			
-		}
+	}
 	
-	public static void theGame2() {
+	public static void theGame2() //The second stage method. Try to Crack the mystery
+	{
 		
 		
 		Object[] option_5 = {"Go left", "Go right"};
@@ -254,7 +263,7 @@ public class Game {
 	
 	
 	
-	public static void theGame3() 
+	public static void theGame3() //The second stage method, knows the wizard may help you out
 	{
 		
 		
@@ -280,14 +289,14 @@ public class Game {
 	}
 	
 	
-	public static void theGame4() 
+	public static void theGame4()  //The final stage method, choose to kill the monster or not. happy/sad ending
 	
 	{
 	    Scanner sc = new Scanner(System.in);
 
 		
 		Object[] options = {"1.Try to kill it", "2.Run away"};
-		int choiceS = JOptionPane.showOptionDialog(null,"You encounter a monsiter ", "Make a Decision",
+		int choiceS = JOptionPane.showOptionDialog(null,"You encounter a monster ", "Make a Decision",
 						JOptionPane.YES_NO_CANCEL_OPTION,
 						JOptionPane.WARNING_MESSAGE,
 						null,options,options[1]);
@@ -311,7 +320,7 @@ public class Game {
 			
 			int con5 = JOptionPane.showOptionDialog(null,"-----HAPPY ENDING------", "Great! ",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE,
 					null,conObj3 ,conObj3 [0]);
-			int con6 = JOptionPane.showOptionDialog(null,"Game Producer: Vast Horizon"+"\r\n"+"\r\n"+"----------Magic Garden---------", " ",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE,
+			int con6 = JOptionPane.showOptionDialog(null,"Game Producer: Vast-Horizon"+"\r\n"+"\r\n"+"----------Magic Garden---------", " ",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE,
 					null,conObj3 ,conObj3 [0]);
 		
 			
@@ -325,7 +334,7 @@ public class Game {
 		
 				JOptionPane.showMessageDialog(null, "The monster's stomach was pierced, also died"+"\r\n"+"\r\n"+"               -----SAD ENDING-----",  "Not Bad!", JOptionPane.WARNING_MESSAGE);
 				
-				int con7 = JOptionPane.showOptionDialog(null,"Game Producer: Vast Horizon"+"\r\n"+"\r\n"+"----------Magic Garden---------", " ",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE,
+				int con7 = JOptionPane.showOptionDialog(null,"Game Producer: Vast-Horizon"+"\r\n"+"\r\n"+"----------Magic Garden---------", " ",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE,
 						null,conObj3 ,conObj3 [0]);
 			
 				
@@ -337,8 +346,6 @@ public class Game {
 		
 		
 
-		
-		
 		
 	}
 	
