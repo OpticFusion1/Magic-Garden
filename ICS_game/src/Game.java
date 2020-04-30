@@ -263,7 +263,7 @@ public class Game {
 	
 	
 	
-	public static void theGame3() //The second stage method, knows the wizard may help you out
+	public static void theGame3() //The second stage method, knows the wizard may help you out.
 	{
 		
 		
