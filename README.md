@@ -5,7 +5,7 @@ In the game, you may have happy ending or sad ending or get killed with no endin
 The flowchart has been updated
 
 The game code location:
-ICS_gmae file ---> src file ---> Game.java
+ICS_game file ---> src file ---> Game.java
 
 April 30, 2020
 Vast-Horizon
